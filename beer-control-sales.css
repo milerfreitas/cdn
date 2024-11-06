@@ -76,7 +76,9 @@ body {
 }
 
 /* Estilos específicos para Página Um */
-.page-one .action-button {
+.page-one .action-button,
+.btn-register-sale,
+.btn-register-expense {
     width: 100%;
     padding: 15px 25px;
     font-size: 16px;
@@ -84,13 +86,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.page-one .btn-register-sale {
+.btn-register-sale {
     background-color: var(--primary-green);
     border: none;
     color: white;
 }
 
-.page-one .btn-register-expense {
+.btn-register-expense {
     background-color: var(--primary-red);
     border: none;
     color: white;
