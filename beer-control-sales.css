@@ -1,0 +1,273 @@
+:root {
+            --primary-green: #2ecc71;
+            --primary-red: #e74c3c;
+            --footer-bg: #34495e;
+            --sidebar-bg: #2c3e50;
+            --card-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            --transition-speed: 0.3s;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1040;
+            top: 0;
+            left: 0;
+            background-color: var(--sidebar-bg);
+            overflow-x: hidden;
+            transition: var(--transition-speed);
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-speed);
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #ffffff;
+            background: none;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: var(--transition-speed);
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+        }
+
+        .chopp-icons-card {
+            padding: 20px;
+        }
+
+        .chopp-icon {
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: var(--transition-speed);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: #ffffff;
+        }
+
+        .chopp-icon:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .chopp-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .chopp-icon img.fallback {
+            display: none;
+        }
+
+        .chopp-icon img[src*="icons8"]:not([src*="data:image"]):not([src^="blob:"]):not([src^="http"]):not([src^="https"]) {
+            display: none;
+        }
+
+        .chopp-icon img[src*="icons8"]:not([src*="data:image"]):not([src^="blob:"]):not([src^="http"]):not([src^="https"]) + .fallback {
+            display: block;
+        }
+
+        .chopp-icon p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .chopp-icon .price {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+
+        .progress-bar {
+            transition: width 0.6s ease;
+        }
+        .footer {
+            margin-top: auto;
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .sale-alert {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1050;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        @media (max-width: 768px) {
+            .chopp-icon {
+                padding: 10px;
+            }
+            
+            .chopp-icon img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .chopp-icon p {
+                font-size: 14px;
+            }
+            
+            .chopp-icon .price {
+                font-size: 12px;
+            }
+        }
+        /* Estilos atualizados do modal com maior especificidade */
+        .modal {
+            padding-top: 0 !important;
+        }
+
+        .modal-dialog {
+            margin-top: 20vh !important;
+            transform: translateY(-50%) !important;
+        }
+
+        .modal-dialog-centered {
+            min-height: calc(100% - 20vh) !important;
+        }
+
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            box-shadow: var(--card-shadow);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1rem 1.5rem;
+            background-color: #f8f9fa;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        /* Aumentada a especificidade e removidas propriedades padrão do Bootstrap */
+        #confirmSaleModal .modal-footer {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin: 0 5px 0 5px;
+            background-color: #f8f9fa;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            background-color: #ffffff;
+        }
+
+        .modal-title {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        #confirmSaleMessage {
+            font-size: 1.1em;
+            color: #2c3e50;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Aumentada a especificidade dos botões */
+        #confirmSaleModal .modal-footer .btn {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        #confirmSaleModal .modal-footer .btn-secondary {
+            background-color: #95a5a6;
+            border-color: #95a5a6;
+        }
+
+        #confirmSaleModal .modal-footer .btn-secondary:hover {
+            background-color: #7f8c8d;
+            border-color: #7f8c8d;
+        }
+
+        #confirmSaleModal .modal-footer .btn-success {
+            background-color: #2ecc71;
+            border-color: #2ecc71;
+        }
+
+        #confirmSaleModal .modal-footer .btn-success:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
