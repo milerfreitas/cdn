@@ -79,6 +79,32 @@
             transform: translateY(-5px);
         }
 
+        .action-button {
+            width: 100%;
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-register-sale {
+            background-color: var(--primary-green);
+            border: none;
+            color: white;
+        }
+
+        .btn-register-expense {
+            background-color: var(--primary-red);
+            border: none;
+            color: white;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+
         .chopp-icons-card {
             padding: 20px;
         }
